@@ -1,14 +1,6 @@
-//Wed Jul 03 2024 02:27:50 GMT+0000 (Coordinated Universal Time)
+//Wed Jul 03 2024 02:29:15 GMT+0000 (Coordinated Universal Time)
 //Base:https://github.com/echo094/decode-js
 //Modify:https://github.com/smallfawn/decode_action
-/**
- * @平行绳 飞机频道：https://t.me/tigerorrose
- * 变量：elmck: 必填，账号cookie，短信登录面板项目地址：https://github.com/funaihui/eleWeb
- * cron 0 0 11 * * *
- * 2023.6.26 更新：首次发布；
- * 2023.7.7 更新：添加延时，增加 cookie 失效验证
- */
-
 const $ = new Env("\u997F\u4E86\u4E48\u7279\u7EA7\u53A8\u5E08");
 var version_ = "pingxingsheng";
 const _0x1ec019 = _0x4f51;
