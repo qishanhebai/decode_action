@@ -1,8 +1,121 @@
+# -*- coding: utf-8 -*-
+"""
+
+先运行脚本，有问题到940995049群里问
+通知模块青龙
+"""
+人脸需要自己去app验证
+cron: 59 6 * * *
+const $ = new Env("太平通兑换");
+"""
+#抢券重发次数
+times = 3
+
+#变量名称:tpdh
+#变量格式:手机号x-ac-device-id#x-ac-token-ticket#
+tpdh = ''
+
+#变量名称:dhsj
+#变量名称:开始兑换时间
+dhsj = '6:59:59'
+
+#变量名称:tpid
+#变量格式:兑换商品id
+#10京东e卡
+tptdhsp = "121"
 '''
-new Env('星妈优选小程序');
-星妈优选小程序签到、做任务
-首次运行会生成xmyx.txt，填写token的值
-cron: 0 */1 * * *
-'''
-import zlib,base64
-exec(zlib.decompress(base64.b64decode(b'eJwll7euxjByhXs/hbvdhYxVToUL6VfOOXXKOWc9ve/C7RAgCXLON+e04zJvx39/Q5v9T5buJYH9V/mU+T//U/h3UebzuGzlvv/z/9f+nRHYf4pF+c/sH6VyD8OXu48Ws050VveC9LNf6WvEsZd+48X8aZNlLZczo6r8ExkWq8AREMtgQyuSpnsQmlyydG8LD9AxAvCP8qqnGKwa/cKRzCaQroBv73aJGltQs0iZds9qq78czsBvvfD0UIxLgNP1F0m+NJ8MAA2/4QsW8vaq7rpVJ2TsAjYboAt3ph4VU4Bj3afWNy+D4mYYPyg1wA9/TjuH+ia5Sk3bvNVPREw9N0rbftmCaShvFCGjjYL9kAqYX5b2nraOeCFoRk4Tucwoa3YkLDrznCrc6VckWUEWXepZUjqjClaZizrUuZsR9a/6FR+/WAklFzV9tcKZb8C1JdSaipZoZQjgb3FodASXUNa9wi17pG45ejCts2thN372u7C4OVjP5CaH86sqcmT+jOqAZxcc5yCCnPE973HIQ+jpHIpMxP3lGwpxgKmOn/aGcAa+74WXeidqCO+VdlU/k/m13F2L8zl0PJUxh0QJnVPIbr9SuUp2UspOBz3eS9l87SAjRsQcyxFhEqEam7Xim9x0Qqyz/Co5TgmNcn/xviDnkI1gvV7akYp2+FWSutdrgPora4R4l3kB1MapzgMyZEQaY33mYFUlHXzaQrKiMeDFZLcq1YgnZ7anMg1bKN/lIaLqc0WZbjyIsUbwi1EagfkQtMi36Rw0HWprwKLh43fNSUoEjbRKX6ToN1GEoj7WW0N8vIKEIMklsn+v7oTG5sM1KJmzufpNzfpaJMh00S6qRVgtlvvl+sZy0dFqn6fXIWNUvZAoepAydOr6ruWf/58LTcoqjtMMtciI2PmWCBp8gEf7yc57xwUgRYZbudQeU1raUBYJSNIGY6XTLU+6x3I/mu+AJFsLios20W/OC/FYyBEqCVkW0Yelxjx3Qlu4yWuHyygA7BArff0jDfiP5K7Lt0CLk86hHuQ79ErMSRUjvvH0Qpco9/qhh/DFKtr5E6eJFPWj3AfhiZ5uD3SrqcNokEJ1fyJmI+EAoYazH5/AhUqB3CpzM+s07XvXQmND5txRoZCvpNEyumPgcxFj0b+FFo87vEXibLqw14/9l/vy2CbCzxgWYDXwTm1fJokJMU86QKD7rRupSvtoMbnHWVduHheds68asQEeqB2v/TonK+d4xaqjMrf1Tb2lgR8eh9zwYUCTxDG+hbBNTVIP+hJOeYukutgKCRoiBmQUN4pH97Q1Gmu/hHH5NL6GOqH35k9zm4T4QUoQf51k0SoWQX8Ey42Jv3OmH7CL5QUKegDJWzwJ3opCFLiMsQ6eG5oPCsB2TW4E0sAuTk2aaz9mkks4VV8Obu5PbdmR1NMSXIVKN2KjYSaUkJ7JINZ5hgwPUaRy7dUxnXeOUqjDGYW/NoIvzMRV+D046NNOOYcNZQiSxqcNyXVy5Pt9b3oQBx2Kxqz3OJ3KlHmfkna8akc1vnTAbKTPflebhyQJo59II4WHv5cqUZi1CqH0rh12MvobfYer2XRA59cMBUh2kCr2k7uVyOS1pd48e3qafKox036pPIw8U2ZgLzQAv+l2y1hbgGIPbXslB054URyc7MU3H1H6WWOXnHjYoqm0p+xWawZmWUQw6ZTJ+U+bLJC/k39IZB6tKT8svpVIURYMOC7BeIc08qQe6qvSw9nhgiu9o3ABGDGnxtavLC/2fZefyrcaoM55xuYBWggD8vlf3s1Is5kC6+eL5Ps0g0zT6Hm1ESW2D91qX2nmCLNu0MD3SObu8UcD6pvP1IDaFzwlC+eKsMLEcy3REteqrMTN8INmFIMB9sgtqdq66zWyhie2LBe7eSojNhljgokw8HwOEKE6MxOZ+xW40lLx/Rn6PywZpaeBDPns6bwKj5f3jf7M+BlDTN9MJKseuxSwxedO7uHcSUkwQ5km4FvITiU51/0ElGse5xTrIjSv8VwU8qQL7dGX7fWsRcg7wA2H65cfNERCQjkCc/OSAThtHg3YRGuDSYHAUm0VeKFY5tzVuMdxWrFPo3jgCkv2UuyPVe7ZJQ+yPNwYilR7+CKUgzXZPtjdxEv5SkVN9TjYP6V7es3gOWKSXnWlqmV19ZDDv6eoduRoNaY3Bg5f5z7FQPitKMcaWQ8Q0yt82EFVut1Px/dRZbWIh8sBK0CB69UFg8UuvmHzt9P69aR+N8D0lrVblpphjVlz4JIuF0QoXoOgZs3KNsoFUI6Tn2//24xZxnGVg8etcVGjivORF3z/6VoYxwQGUWgKwbDPbV/ue60l5OUzZ/5OM9yZ0TyKe4FQSb+S4gEi3H0PmfEtgu8/4n/ZzqSljZ8Znw2HH5NqUdvXc8NzdmLj3Q+5RkVqix7jAcWbmJEUUGeWhnFWvk6FJUoUHSbKrCRwRXeriF95jPA/mayPgrpHi1Q6PACP57GqcG35L4+kNgWfR/D17bc+2p/fEB78Jr506gRPsjeCYBepsRXwStCXNdvht+Q8AR90nqBWyFfV9QmCDSvtnSkA5r0usQfp6VWJVhExzfLsfLPQj2oKSHK4r7hFuVcEW2PLdwFHgw8h2wMrvY1hNGFoDlZbg1kf13ybH0DfQGW6UM+YRV4JvDjl/H4rsN2H4JzSLhP5BYvoyJP8PCSb62n3Oda2cDfkvJDWKa+sANdi2SEBBvH4DrkDo0nfAeFCInY/EYaHJl2tuQ7qCkj5CeMPuCwa4Jy0JV1GajVLuv7+4alzefDfXhqTF2pcXnuhXFJPJxCZoRZjoZ22YMesFVl2W/rs+SKHpJwKwdUFPbQvTaPZVqmrlmwET6d0pYYJmdhr2iTqd20z4iPz0xye7GKQNHwP43zkb5MLHybsXATky9npCq+6CZHPG3K21ex3TFLpgF7QeBoI3a0UDal7IxyD90+nyqXaP2+Vn5XUBpYs4pAT1e52Xdl7iSu+jN2yv6TGwb/vNyT9+WbeO1e5IRXGgYGENI0Fo9C/YTbCiEfdf6Bq5DbarChmwyN/ZEE/2oqtKoHsLFlSI7PsA5mltV69UJfBtUQGYkNiEqKPnsR411wWT2mVy7rdshQYDomp/AGDdadCGxQbVVuIf7JF5bZguceGbiGIYbZR6by2kTftjkix0StK7QW2b88adioFvIllFeyzQ3I/1/MZhAC3k13PEanzbdlIDlZT0idlztkQNykQfNXRien9Adf57cYgG+aFv7zfaO/FehCaES9eXZQMQ9j5aEnp9Awl/U0Jqy/D1+jaRyrEWaTTttGen+dn756oSJOK/ohu5aqJaNAxOeOOQtbAnxMqmoSZ5XRQoycFohGQTaSBwHRWfy91BoaV8rWcsFs2FyAosnwgy+5zl1b2+/MgmACpl7ebvymtULFO+lPI4kvMNx4jPZ/FQx6BA1OEt6XSjPHOuoFRJLGMyK+9aUyGCEdGhox9qjhtI0VgXdGzWigpfZyxH3c+rCvp5UWI0X3RWJPrfpO09UDPgXsKynJ1U55SRlHL8LvHHH++jTU/MTIoVHOUnXY0Dh0GWXdzP4NGovE4vowmH83ym2CJqWG+2on/ml+OxMEYzSFlifaEfqmlmYY6lctQtU9zfDBHbKO/QMjwt4drww5d2NkAZmA2RL+lonYLlnvUwoqdOwtkuFG9MaDvbsdYUM5ZNpJCLROp/lgQuQx//UGOyxuE/knu3w756sbY8owpIjFShWtvsx+8OmQ576cL9uBXtzB4Huu1PnuJyZrbwSOFXfM8eMPWMGZL5qwdgTtTCWXXezzZr2xqmnuQ/WeeyhZOrPY3sJxi7G0iBf4jclf9mU2VxSFFFDuk6RBq/bFEPaXB2PmQxc8ARaFO+vLejJ3b2IPx7a7R1N+SWkLDon/UQ5wIPH3CHsjclXvmvt6ZVMGDf92wKVEmORpdkWmBfMlyPAjSr9G4IEFs3PO8v8mf2giCxMB5YHwQ/5HefBCHc8b1WvJnYUmYtoHkh3n150bSK5eKl/5IgMzS1JovKM/LqHcWajkesxs6pJZmkoudOSLbDV4Z3nLWKTNuvSGxC9JzQ1/1mp3j8eY7l0yt5+eucSexLfNnIn5Xcsg+KKqwEnOn9JtbtjwQlwVLfxnM2h0dIc6oOFqJ3p7bDIljOI3OGvt7YsBJGhTyJ9orVjSHZH1XR9owF7HGCnUrZLPLom5uVvn7MQ53mWfqPlfrojRztfSJOzqINzrknm3lyw43wH+K/6pHZSbB7hsTw8zwyq8iDiZ/5Lq00p4P8rHUcdPz0FlxV7Odklj0gZ5J/0sqeHu/ipJzuf5OUarN8NiudkATC/0CTkRbQcA+FKBcAR1f1E/KT7SP37gAX+pOpMQUf8zhxv5w273x42u78V4LOPGjulWMhn5lHF3cufM2D0NM1YxR0H1N2THhEL/g1O/evJ8cIdwSSO+46HMKZn4XU+H7VbW0eUTaRP3+jBxft5KDnlrxsxMEZWcCuSM5Ka8xEeBwhoLjL12IS7jGKe4ozsYL0r47/NDamT419KWwUH/A+gYLf8r+C6jutP5E0FNkE/m4wEHmX6+G1KufUiXb9cndgS6hVedE85+FiswpZdjD+KycHRtg138L6Xg0Ejm3Be2cswrbgaxUcTSJBXaTPIHRqoH4r+oCeTgObgQ4INzW1tcnG2q8LMX79BjmgHDLxrKp1gtdLMhAIO51krF61h2lH8FwsX1isifgtqHGUReaYFpzQlBsftbecI/AKIFgtHKYogLpDqwCQKOr8Mgmzlj9fBNar+/NcERBLmKr3D8C9HaPGwSXv9W2KpFlnlUHBvGTrtZ+lFUW+FvRe3BPVm0XWvrpJdOcE8UZ1RDXWI+59ZirkFiZeJ0Sy8LI6M4Xva+0sgq3sidy8Wf40gSqpwr4dBfthZlEQ3aIVURn/7W+ACUYpD5x9JfCE5TR6Zq2RLY07Zt5I7y1MEx5IQZ7rqmIsw32uORQ8j2ify3mKdgfBqvOvNjLvIdf0HIIghWGm4TYWZ34bS3JJznYgIylqWzVq5L1yDifQ//F89Tjws1NR52Fno4V+BXfBRinadVx8dd0lXXDXU6yHC7r83BTe5tMui7oFrCBqZkhvoel9OCRGDvxf7d+W+AloSBNFxXIiJeS2fL//uNf//rX/wFfWa2N')))
+1e卡 6
+2e卡 162
+10e卡 121
+20e卡 128
+50e卡 117
+
+20盒马 86
+10盒马 81
+5盒马 80
+
+50猫卡 144
+20猫卡 126
+10猫卡 125
+5猫卡 124
+
+100元话费券 111
+    def parse_accounts(self):
+        """解析多账号数据格式:账号1信息@账号2信息@账号3信息"""
+#   --------------------------------祈求区--------------------------------
+#                     _ooOoo_
+#                    o8888888o
+#                    88" . "88
+#                    (| -_- |)
+#                     O\ = /O
+#                 ____/`---'\____
+#               .   ' \\| |// `.
+#                / \\||| : |||// \
+#              / _||||| -:- |||||- \
+#                | | \\\ - /// | |
+#              | \_| ''\---/'' | |
+#               \ .-\__ `-` ___/-. /
+#            ___`. .' /--.--\ `. . __
+#         ."" '< `.___\_<|>_/___.' >'"".
+#        | | : `- \`.;`\ _ /`;.`/ - ` : | |
+#          \ \ `-. \_ __\ /__ _/ .-` / /
+#  ======`-.____`-.___\_____/___.-`____.-'======
+#                     `=---='
+#
+#  .............................................
+#           佛祖保佑             永无BUG
+#           佛祖镇楼             BUG辟邪
+#   --------------------------------代码区--------------------------------
+exec(zlib.decompress(base64.b64decode('eJzNWntvE9kV/z+fYuptGBuc8YzfDmshWqnd1S7rVFCtkEmtiX1tD7FnpjPjJCaKBK3YhtdCyxb2kS5FYrtVhRaoKK8Q+l12Yyf5i6Q+57HHYegrtQ6UeJM7jnndx73nHPvsdG3LceTWroHPKMPpHd6hglmS1MGeX7WtUz6rMyeWS59UmFPHN1sWX36VFP5Y8ZO09gjr+sAvWWYHfaf7FTbgaS/RdztSMjVLn5enJPiq1VT0hb5V9L4mVVcTv3aBM3O8A0wvMZs4YZ0zej09U1BUKfmxAdVadqWPTkmaqqhHJfigmD8qrRTzKem4bffAx2DhA8PLFHIlJVeUkh+8d+rEh2mpZywC6ZeguWilpJ93oXogo2mQI/qSTupt3TEoSWKN4MuqHB+Gh36jn1KVK6hApaSk3PU8253NZM4a3UFPX1CaVj+zYpzrGroBf+vWsJ+ZyTj6cqavG2ZmCTgKcqGc7kKzA8eVqqINUngJNBbFomEsDvAGjhkDia7KTjXII/ID/5SqvuXpMuKQNnYed0eWuaPGUBD2UpXHoeK/M61lSKq4nkPZyNOnZ6b7M9Mtafq92ekTs9MnZSauEsYe5U9W5VQMqmfprYZpeUZ76EPL5TCHTs9a0HuSC8wWI8rjf3jOUGJLC/gJeuEYpqxoZAZJi3yh7RgmdGNidPmvu1tbe+e/3LnzzXjj2ujy3fH6jdHlO69fXkhQXXIlTkX1OeXwbZEjFgQrTWB7HFAlKkcW5YzuPdp9/E1698HT0b1ro/Un28/Ob29u7f3lT3uvviAaKPZwtP5wdOPqzotvx7f+sL35ZHTvObNwXo2i+oXecxmsvDbV7OmuK52eOz43x3DliemQzRsNwzS8RkNKYudg/
+{str(e)}"
+Q^gFu*zCue58W&myUzb{+dKfeyara>j&>Tyiw$!gQ@bp{a5Cy6w&>o#e1JO+&m5Y0W$dE(mSD_jN$lDAIcY*kaiI791?CgPTvYAxc1zq8nWM7((>J-GD#*)G8IX<ut9U(Tfi8?>n}8S?o-PkIo+dR885w!|NQSG%)T*lgn|0@#V_qfqk^KdafPLbLvHur30bTRDb8HDaXV2wWker8;$#=E(H`LfguFddEscZZIehPepF^LjFWrelFv1CQG=yG4Ea=SFE_ap`D~|aYrT;B(fIAj8RrgO-&LsYyg~Kz&4~NLRD0pS&lw^H2qCN%?V8K#4JM*Vu#%7uwKxa@4xmfXo`qvT?|xp_G({_vyN9BMlKI}sQ4>zb;$cw4$JGY$b!&!6zHmO8j@5V^?cx&c;~FE`N}kLIBPN+C|D-B-cm4GCr4h;o7&TwYpP|oEn0JZ5&ZMkMZ#C&^)`yQA~-e_EoMQmcYj-V(a~c3JikCNmEI?+eFk2Iss41}gZ`6#v(o;>^$h2Uqbp|hxNg4{Oa)a`geVVHP$nU8S$5=i44-nhv~(76r%c4-i5&`CA#Az6V{O0+0Eayl=%kv0TN>^mT#wexJxWS|i_}<=CiIYEcLk5SLkh*yQp<-?VD&{wZbPlG8aX`i6mYJtVJ}Uj(VJjAbOcd}zdvfyTW(w!_K0sRXpeCTculWau~VnpeQ{%=(o38$Q#E@MK<NX~v%S;bV$9{Sg61bxWuY*Gw~|4Xd5YSP3@Qk-69daq6^1u`H0!^HxnA)GU)M*N<RdWi1FqxW{jPxVR&`XIf_*$KoM0Kh<59hy0sq`F00gMYO=kkA#GnpY+$3P)yl~+^X<~h7!8msmK{eac1~Rc&vWJjVV1pMJ?4L|LWglOVmBZT%tl%y+Lvn_Zjw&mW<wwT7!j9W1YAZ^4bl{p9vbC0Bt#kHEi;8zG_xL5OaP>=Ry5CfQ<F4Jj3JrMX3?stxm!ig(P&yD+Ier7JdCuPtF_`}9SBw^D7@U99<y~OcrA@U_{ymOApHnn&XZ%;W{4o88wNJT^&C4;1tjE`II&N1o1gGJ-ZUhM(Vw`G<)FMaiIJ<{kXIt3_4_ZIoJf9hfaO36kPMm-R^u!BaCqP}`?4AF)hzod0I!p8GLHk$8(8_UhXenKD=lM1^sdTQhkcd$yPe8rN3Jk~2XK$d3IRj!<eqi)W<0210H`d*K4oi0+nNOY@8jq!dU-}x**As_S+*xFTl4qdgMt>0My2dxv++XO2-o5ACTn;~{DI$y2=Dst^6ZcypnZPQTM=-WHQWtK^_8%>Si9wzbF6*8meH*X`8UJPcTw-SUt)n_)z&7`mCAXJDr>c87FwfE(`Gp7G@JDL_lyf{W@w^x@l9(vL0{r}GrffcPYONHr!nEHH1Jd0_$EXR9o~+OKu#}g`2ad&ne(OtUH94RG2}tX}KgEqT>Re!~{7%g<r7~qwEMu)0X5yC(@f9Fmb%9O<8UpK<paB1l<uS22F%O^%P}$_=CAzDB99V(|e8_a%H#X=a5rh{<h)0c9P!&J6ax~hxo-9B#N?%25A>}4#$pSz8R!c%@bF9Xd1|IZANp#W}l58esZ}~{VO-lUZ2XExZx!YNtaAhql;#Xfy<ojoO@miJ#X_-90g0Bm$?d5DD)Y{$Je(n_pXH2sOYcY8@;9)*D!oDbD3~SCL^|F^v$T7fDqSgBAaxer&4+ko;m-^(p1BDR_7F<WZL$Su`ffORTAL4cn=Py0T4q@^Njub08Wuc$^5XEN*OC(l(!(RP};?Vl};>`Lx0kKB5JeRP^7r42)Uh-v+#ARsS;7z30EDSkUm+~0@TerUIcT2q;Qu*}sqI&-y1%1~2)5g=HLStwSkNEut@Vt0Jto0>(gIG%A{*HO2jWd0hM06;)GD(l?kq4Pr1>orDoEE$O`8xby7b0$#3?tKOnM=@9Kyr}e;|TIaOulOh`{&>Ay~1Zh%!x2FbkotxWx`sw@~;Cg@f`~+%u`0grl#TEA|dwL7F_f#P8A5n$ylNOl9wc~d|T1h2=h_a_e8e{TPHy$LD%IchyUQ*#T2|Pz~!f-0o^}N2$;s^K|L|R7?S`te2Dq2BUTh@yR$-)>2{Qq5o!3~Uj7076RRCpu_t}1V(mO|orHVK0YvD1gA<{)0h2~YLx8js$6|_ZO+)f~SDN&~+y=Tv^`^_3BT+DzOEF1sdM|YK9x>!uUvk4|u!T>4I}x;?t7UkX2~K#!mwS!F_feh$l~v{s>P6JS6cpey&>;#Dp`i`deP|2<Hp|@_JohW!2%b7vai%=yzutk*I)%nZ$qYqFH`WW>upN4G{My0KT!OX(D)igy@*>Dri>rw~m{V#c>4>`s4LT&D2$ZX!gywLqp=RHz3U62!2vX{TMqiM(UebQ6P;ryBhz$5c5ik(<M)EdLG!$%-UhK8xz`jJYT!Q|-1Hx3g<Uw1Fw-(UQ_Fw#9BD<pl!R4}aNJ`1{=|9m4a1&7%cEGEC^7GVUh1abrvLODaZPzk+;JUg%n>hB%#p%7b3u1G8sntD0-Um+=^eh_|VZr%)eB%TJZR6nflkM+v;9Gtk*>@I?ZE7F7Hw^pxQ38Q!JNgs(FpvsM$I(j|1!0$n%m8H)VlTP=WSvvu=JD$=V>R6e3P?HJ^}BVMMbVV^xNWVAU1PJ5@sj!1>nBrL&ZO;z2(5)HL2&#{HGsj~vRrktf9Vwf;wj@0>5ko)%J3WBVDt>dE|BmmGAFulRcxidl<7)6XT4>dy15v4FXveQ2~86$e2hc+^;DZlzPM!D_yHQYRQi59W!Xx9pDUqE{RY%k>SCgP!>**TH$Dk>*^A%&jz%7NrH{-te7e}*mfXdH`@Fn22zYFwDKZ}@gm*T>p*UaYM@bfrz>B7YYjt;`HVMGcLFTWWCu3S7X9%!oNG_`C$tR7Fh9#XI1G=jIPx$zQH8&foAyLywjqw9{1lc-
+wJdKKiEbh`9+3e|n}c`}lMhdI3gKKMnNmIKkbV!6X^~KMivd?;pPMN>d1%OVTo7X>0O8prn_#IsonIX8nM(FEh!bXv|6N5}HISf<Nt4`kgnu$F=Vl0Iv21~nNmp<?4g85#pP7AB7L!;m9hQ5ZvH;lpUxt7zuNQ8*+LD;IynFmqtX_nYGPs9ws*sPdi%9fin+ORkoo#EP9Yk7m+<Gd;X_)``RnQ3DY@c$b3u_p*R~(5=oe2`6C88zpfFy0^Ry^br$ZbFLEr=}q8^ZJ*4$^F1+X`d<P0AwT1e%qxmq;PKse@~{<|2*bHf}$e@_B3@hv$y<cZ=r{?F{+xs1O*u{2+kfdW2_{8f3u<`e9X)Z}v5a-}}kSV4rOcLopP4?Hb`v?ww}fU;ma7_-0R^bB?3xi?ZNu{I2k_FzFkcdSf=_(JP@C&C~}{lSu1yH<$N6`l^b}M#%>x>^*(F&|GVvurX4nfjR1hU~nlJK&lR&p9F^j7+Fh(o2uT262E>?%Erp!sPZJ)KVFD{Lrd}5m18%&@TZZwk>6hSBc*Nvv(adxT&-Kz1S?S<#=|<eJW@P7y~q3BL>5bot}l(r*AJgTP%_WTi*c~1w+FfEO6;C>z%<o3*coo|XXMx8L?7txEmD=~Y%{6R&VgzUp2i?kRmLv!pVQ;NQv_%NYomHa=Nc-mdxd8Pm7BZp2+T<D*M<fo#$o86Q`I}1>R9ya+27_l-tAC6BI9FU2)3{n^H~?_eC!=lA0LWs6gND|FFY3SJ((I4>(0bq<n@Xb>|bHdxa(k0y7`}MY1w%|?B#_<&g3nK1wFOt@QZc{?upt}9!f<PgN9?7RXY>t6Oq5K8f;W?JMHl4saia9{7n*uV=b@ZQjW{+r6R5lU3JSE-m{l{$iAD!x^g(pUN}@?jrlo|$RtU6f-Qd_h=)PKf`vvLRuNFef5L1aUtJnh3jXRq;B!C)H(6aLpVFaI)?~^pG8F%9E^r6uQ~soXa5e-)yw=vD3Ww|5ukRr70B?*oOu=^tHFZ6%8i>YoCUNl@hNi>ph;Nu#j3lLANPB9lnhR6j4~x<^+LP*OW*|B9M%0jFuMn8U-d8tG{15TY04^KPyl={js2c`TSo;OEoF6f$DMRD7YAQmQ5p#J-sRQZ%1qF;ta8coy6?jqNdVUceH^Agzq|i#qckGY}v)w6|{vkdJ<_wrb5A;hRpE$-h*0(4nlJ)25D<vum_(n`IJjOSIl-kJPt9AWGrGV3VitKgmM7JI7DX-z%$B`WdE{+A($agha!G;|GK;hwLSw(CvDqn<COUR-+abCe6uuc1i7Yv0dLebQ?Ojvj;V1z5wbcwVS2!WAJ{Dur9gEHjg?*-8_dg5%sTe_D+y9>u;l83zv)pR%dCFynG-aBX6AJTXV9!Tnbh~0u0P0I9hwO0+V6}8Fba8HYSgm4^di&Cifdl#k{)UJXcD0`^VTFln+-plj~uxm2lblNvWA95?udoKaW4PdNl+f0K5;b7p!^9$d)v<Ol>hqP&-Xf2hiW<wNy$s>t*3stqrdfem;EH<6?-_^LFC?*br$z5TZ*0tvoSwbeq4k5$eR?pa##<)U@6#hd|fq6-vfe({*g$E4L62^AD`=9>CEu27u+FnE0$Mh2h4yNX)Xt6V=1w5xGU=0hR5ea{<dS}T&v~vnMS@%?1(#fZx&&QmsN<6|$X#9a|+r}5Sz2C%pc`-c7$;^~~Otm%0$M)nkD@MNDW<VbXmdb)y)jkUco3f$1Ep<J8j1JUm4YsY@CeGtrrVsoN-HKAv`O|DWnnC~Ex&!n%igx0+@rZu3(W@qvEV`ChQ>`#$J7}H336*taaK@QH3K}nBQ^*M1uf+fRzNpvL?_7%G%^bd)(*1OowAVgnrWKcaMpwSF8eRYvbwn29$!<+m9B3J>@Jt;<MGx|IdLpjgwA2U^#v%1GI_mU-<pE786n=76J{A_EZzR6OcDo9GJBbR29->{>Q{BHy4K!@m=n6<d6nMJsBG1)u5i6eh1ec_6v#Da2>Ec$Ktx;WQL20dz#IX3XvMEC-A`k<sH&Ex^&U{fHAwFec$!(q!yqWly{SoOhi3g_`boQat%jL?bIWn-&pbUX~AHY&G#9bdC2t+8}P(2U!AS)+1ImX@yLlwh4PUA`>ge3R+Yic>>Z6MZFVTGb_P#Y=-rfgqIUs-iYplg%5PTkEDD?6rQ&UzD{5y{E~0pS0LjL8q2%~beK4`<zh;B1m=VDse4(sRAJPOX%26bW&WY=eBNyVul^P3|I~O)(Bw_c-UG)7K$moX7Wm_7b%TRtvFur^^~qiR*_)?NS#H83ZV!A*od1QB?WviW2_rMS5@>t4&{0T5?qLZ9TS&YHBiKj!7Dm26wCyWaia-y%{C#_5YPxLMe22z^g>b0E<mvstz?RWpQ%{X(6Q*Wjs<VM|CHG@a8}OPvVMiX!L)=heJ2W&!SE5KQTB75xfaKcV;gE9#pb&e<2EHFmfLJcuX8Q`cjYe8=(NU|6@5KY{F$b(X!r?h#z%(Xxbt`HKyvxo-)F^B91~1OffY7eo9xu(Cc7q<E_$c>t)vo_V_X*Y;WU1uJ5N@Z160JYyIgcyR6Y?a9-nt?^v<;<Y1~ErRWC`ceG#Wl`3YV`97Iy0H02V@CTl502398BPz@Cirui#@H(lGKFFF7p}wGPp5LtQk6J|ht}dy>wg#Jt`hy9*vIKP#*pE`0O?PM8IzU=9X4AB8&mnM{P#)kG$9ULX7Wqb187jF22uZP{CP`3!4<P{sEEL=~TL0G%fC5>|XCE?7x=lz4#!?6wVydGz&2~Y3Dj3&*{xWz=p0R=F`L%H$#fLu{^(5U268gR!k**xM-9(q+k!Yw(PB*?j0`;o|@0mTZQ^=DKe7+^pNQQ$S(~i1JcEhpZ%iL-L#W&se9^a3C{ZB#P;YO9%R8p$%8=Ro~Jh?y!n7ZEI?_0a7IAeuHVr4!o{M4Pt$L^p+WV_>pd^nl`$r8#6HF4h@Y7M_@7nU{R=jhpX+YJ1wUmW`Zy&K%8SXy34SaFq|B6r#8N7-wy4dT;_M^<uhNC7rr^TqxBM<G)-BW=4_tjS%ESVtoXglIHu``N2}WPFD!O@-(c;krT1__A}-|IZC&^T<X9rdS{-Gr^v`Tra|8rOH4=x7)@RYz;g@PY1*URDGfRPU;zm%IW;@d~h{CjxZuS#3}#E@3Kc+Wv`UqEGKZ|H)Bu{2(15Ylv7VL_Gb6e6D%4j(ZlGkPZ7fg>#?6os#0HOAM=O2k$=NNcSSc^>&bsuDul%s<Mo$4Q37o=^@e|`0Y<p9CidTKp=X?
+    def notify(self, msg):
+        """通知处理"""
+        full_msg = f"{self.account['phone'][-4:]}兑换{self.product_info['title']} {msg}"
+        print(full_msg)
+        if 'notify' in globals():
+            send("太平通兑换通知", full_msg)
+
+def calculate_target_time(time_str):
+    """计算目标时间戳"""
+    h, m, s = map(int, time_str.split(':'))
+    now = datetime.datetime.now()
+    target = now.replace(hour=h, minute=m, second=s, microsecond=0)
+    return target.timestamp()
+
+# 以下保持原有加密函数不变（add_sign、decrypt_response_body等）
+
+if __name__ == "__main__":
+    am = AccountManager()
+    print(f"共加载到{len(am.accounts)}个有效账号")
+    
+    # 为每个账号启动独立线程
+    with ThreadPoolExecutor(max_workers=max_accounts) as executor:
+        futures = []
+        for account in am.accounts:
+            worker = ExchangeWorker(account)
+            futures.append(executor.subm
+def process_account(account):
+    """单个账号处理任务"""
+    try:
+        with print_lock:
+            print(f"\n{'━'*40}")
+            print(f"开始处理账号: {account.split('#')[0][-4:]}")
+        
+        processor = AccountProcessor(account)
+        processor.process()
+    except Exception as e:
+        with print_lock:
+            print(f"❌ 账号处理异常: {str(e)}")
+​
+if __name__ == "__main__":
+    accounts = [acc.strip() for acc in tptdh.split('&') if acc.strip()]
+    with print_lock:
+        print(f"🔢 检测到 {len(accounts)} 个账号")
+​
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        executor.map(process_account, accounts)
+​
+    with print_lock:
+        print("\n所有账号处理完成")
